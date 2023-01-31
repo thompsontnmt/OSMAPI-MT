@@ -6,7 +6,7 @@ import { Show, Nav, Hero } from './components/';
 function App() {
 
   const [data, setdata] = useState([]);
-  const [showdata, setshowdata] = useState([]);
+  // const [showdata, setshowdata] = useState([]);
   const [clientId, setclientId] = useState(
     "0_NbVCNnwR6AsFVIEwlSzh2_c4dJEf8sY47ZN0KascI"
   );

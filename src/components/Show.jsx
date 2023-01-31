@@ -15,11 +15,11 @@ const Show = ({ photo, id }) => {
   }
 
   return (
-    <div className="showineer">
+      <div className="showineer">
       {photo?.data?.map((item) => {
-        return (
-          
-        <div className="card" key={item.id} onClick={() => showmodal(item)}>
+          return (
+
+            <div className="card" key={item.id} onClick={() => showmodal(item)}>
             <div className="cardimg" role="img" style={{backgroundImage: `url(${item.urls.thumb})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
                 {/* <img
                     alt={item.alt_description}
@@ -49,11 +49,14 @@ const Show = ({ photo, id }) => {
                         </div>
                     </div>
                 </div>
+        </div>
+        );
+    })}
                 <div className="modal" style={styles}>
                     <div className="modal-content">
                         <span className="close">&times;</span>
                         <div>
-                        <img src={singlephoto?.urls?.regular} className="modalimg" />
+                        <img src={singlephoto?.urls?.regular} className="modalimg" alt="modal" />
                         </div>
                         <div className="modalinfo">
                         <div className="modalnames">
@@ -62,7 +65,7 @@ const Show = ({ photo, id }) => {
                                 alt={singlephoto?.user?.name}
                                 src={singlephoto?.user?.profile_image.large}
                                 style={{ width: 100, height: 100 }}
-                            />
+                                />
                             </div>
                             <div className="modellinks">
                             <p>{singlephoto?.user?.name}</p>
@@ -82,7 +85,7 @@ const Show = ({ photo, id }) => {
 
                             {singlephoto?.user?.portfolio_url ? (
                                 <p>{singlephoto?.user?.portfolio_url}</p>
-                            ) : null}
+                                ) : null}
                             </div>
                         </div>
                         <div className="modalcardinfo">
@@ -92,9 +95,6 @@ const Show = ({ photo, id }) => {
                         </div>
                     </div>
                 </div>
-            </div>
-        );
-    })}
     </div>
   );
 };
