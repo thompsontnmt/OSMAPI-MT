@@ -7,11 +7,14 @@ const Show = ({ photo, id }) => {
   const [mod, setmod] = useState(false);
   const [singlephoto, setsinglephoto] = useState("");
 
-  const styles = mod ? { display: "inline" } : { display: "none" };
+  const modalStyles = mod ? { display: "inline" } : { display: "none" };
   function showmodal(item) {
     setmod(!mod);
 
     setsinglephoto(item);
+  }
+  function closemodal() {
+      setmod(!mod);
   }
 
   return (
@@ -20,7 +23,7 @@ const Show = ({ photo, id }) => {
           return (
 
             <div className="card" key={item.id} onClick={() => showmodal(item)}>
-            <div className="cardimg" role="img" style={{backgroundImage: `url(${item.urls.thumb})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
+                <div className="cardimg" role="img" style={{backgroundImage: `url(${item.urls.thumb})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
                 {/* <img
                     alt={item.alt_description}
                     src={item.urls.thumb}
@@ -49,12 +52,12 @@ const Show = ({ photo, id }) => {
                         </div>
                     </div>
                 </div>
-        </div>
-        );
-    })}
-                <div className="modal" style={styles}>
+            </div>
+            );
+        })}
+                <div className="modal" style={modalStyles}>
                     <div className="modal-content">
-                        <span className="close">&times;</span>
+                        <span className="close" onClick={() => closemodal()}>&times;</span>
                         <div>
                         <img src={singlephoto?.urls?.regular} className="modalimg" alt="modal" />
                         </div>
@@ -95,7 +98,7 @@ const Show = ({ photo, id }) => {
                         </div>
                     </div>
                 </div>
-    </div>
+            </div>
   );
 };
 

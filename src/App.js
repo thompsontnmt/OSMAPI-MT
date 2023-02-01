@@ -7,14 +7,14 @@ function App() {
 
   const [data, setdata] = useState([]);
   // const [showdata, setshowdata] = useState([]);
-  const [clientId, setclientId] = useState(
+  const [clientId] = useState(
     "0_NbVCNnwR6AsFVIEwlSzh2_c4dJEf8sY47ZN0KascI"
   );
 
   useEffect(() => {
     const url = "https://api.unsplash.com/photos?page=1&client_id=" + clientId;
     axios.get(url).then((res) => setdata(res));
-  }, []);
+  }, [clientId]);
   return (
     <div className="App">
       <div className="navi">
