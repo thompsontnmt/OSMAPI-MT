@@ -540,3 +540,28 @@ color: #444A53;
     grid-template-columns: 1fr;
   }
 }
+
+@media only screen and (max-width: 642px) {
+  .modellinks {
+    display: flex;
+    flex-direction: column;
+    height: 130px;
+    width: 100%;
+    position: absolute;
+    left: 120px;
+    bottom: 150px;
+  }
+}
+
+@media only screen and (max-width: 642px) {
+  .modalcardinfo {
+    display: flex;
+    width: 12.5%;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    right: 125px;
+    bottom: 360px;
+  }
+}
+
